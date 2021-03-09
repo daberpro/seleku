@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>belajar css dasar</title>
+	<style type="text/css">
+		:root{
+			--hijau: green;
+		}
+		/*ini menggunakan nama tag*/
+		/*untuk penggunaan name tag = 1*/
+		h1{
+			color: red;
+		}
+
+
+		/*ini menggunakan nama class*/
+		/*untuk penggunaan class = 2*/
+		.text{
+			color: blue;
+		}
+
+		/*ini menggunakan id*/
+		/*untuk id = 100*/
+		#hello{
+			color: green;
+		}
+
+
+		/*hover psuedo*/
+		h1:hover{
+			color: green;
+			font-family: sans-serif;
+			font-weight: 500;
+		}
+
+		h1:before{
+			content: "hello bro";
+			font-size: 10px;
+			padding: 10px;
+			width: 50px;
+			height: 20px;
+			position: absolute;
+			background: black;
+		}
+
+		.box p{
+			font-size: 20px;
+			color: salmon;
+		}
+
+		.box p:nth-child(3){
+			color: var(--hijau);
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="box">
+		<p>hallo 1</p>
+		<p>hallo 2</p>
+		<p>hallo 3</p>
+		<p>hallo 4</p>
+	</div>
+
+	<h1>hello world</h1>
+
+	<h2 class="text">hello world</h1>
+
+	<h3 id="hello">hello world</h3>
+	
+
+	<!-- inline style -->
+	<h1 style="color:pink;">hello aku inline style</h1>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "seleku-compiler",
+  "version": "1.0.0",
+  "description": "\"this is a compiler for make a seleku apps\"",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -w",
+    "dev": "nodemon ./lexer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daberpro/seleku.git"
+  },
+  "author": "Daberpro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daberpro/seleku/issues"
+  },
+  "homepage": "https://github.com/daberpro/seleku#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.31"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

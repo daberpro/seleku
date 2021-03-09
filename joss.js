@@ -12,6 +12,9 @@ let oneProps = {
             type: ""
         }
     },
+    "ffs-": {
+        "font-family": "sans-serif"
+    },
     "bottom-": {
         "bottom": {
             value: null,
@@ -187,6 +190,12 @@ let twoProps = {
     "b-s-": {
         "box-shadow": {
             value: null,
+            type: ""
+        }
+    },
+    "bg-g-": {
+        "background": {
+            value: "linear-gradient(to bottom, $)",
             type: ""
         }
     },

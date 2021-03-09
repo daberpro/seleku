@@ -1,0 +1,32 @@
+#html
+<div class="p-t-20px">
+
+	<p id="title" class="f-s-20px f-w-500">
+		seleku core
+	</p>
+
+	<input type="text" value="hello world"/>
+	<input type="number" value={5} />
+	<h1> 
+		hello 
+	</h1>
+</div>
+<div>
+	<h1>
+		hello world
+	</h1>
+</div>
+
+#html
+
+
+#css
+	h1{
+		color: red;
+	}
+#css
+
+#js
+	console.log(0);
+#js
+

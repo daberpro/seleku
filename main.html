@@ -6,8 +6,10 @@
 		
 	</head>
 	<body>
-		<h1 class="f-s-40px f-f-monospace w-auto c-gray m-20px f-w-500 dbs-0.25 pad-10px br-r-10px">{text}</h1>
-		<h1 class="f-s-40px f-f-monospace c-gray m-20px f-w-500">{text}</h1>
+
+		<h1 class="f-f-monospace c-gray f-s-50px">{nama}</h1>
+
+		<h1 class="f-s-40px bg-c-(rgb(245,245,255)) f-f-monospace ffs-0 w-auto c-gray m-20px f-w-500 dbs-0.25 pad-10px c-(rgb(200,200,255)) br-r-10px">{text}</h1>
 
 		<input type="text" class="f-s-20px br-none o-l-none bg-white b-s-(0px 2px 5px rgba(0,0,0,0.25)) w-100px h-30px c-black f-f-monospace f-w-500 pad-10px br-r-10px m-10px" this:bind={text}>
 
@@ -15,7 +17,7 @@
 
 			<h1 class="f-s-40px f-f-monospace c-gray m-20px f-w-500">{count}</h1>
 
-			<button class="pad-13px f-f-monospace cur-pointer f-w-bold l-s-1px b-s-(0px 2px 5px rgba(0,0,0,0.25)) o-l-none c-white bg-#673ab7 m-5px f-s-15px br-r-5px br-none t-t-uppercase d-flex" onclick="add()">click me</button>
+			<button class="pad-13px f-f-monospace cur-pointer f-w-bold l-s-1px b-s-(0px 2px 5px rgba(0,0,0,0.25)) o-l-none c-gray m-5px f-s-15px br-r-5px br-none t-t-uppercase d-flex" onclick="add()">click me</button>
 
 		</div>
 		
@@ -23,12 +25,18 @@
 		<script src="global_function.js"></script>
 		<script src="joss.js"></script>
 		<script src="seleku-embbeded.js"></script>
+
 		<script>
 			let text = "hello world";
 			let count = 0;
+			let nama = "Ari Susanto";
 			let add = ()=>{
 				contexts.count++;
 			}
+
+			setInterval(()=>{
+				contexts.count++;
+			},1000);
 		</script>
 	</body>
 </html>
