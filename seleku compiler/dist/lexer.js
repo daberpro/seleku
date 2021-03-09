@@ -1,5 +1,5 @@
 "use strict";
-let { getDataFile, CREATE_UUID, lexer, data_to_ast, whitespaceLexer } = require("./global_def");
+let { getDataFile, CREATE_UUID, lexer, data_to_ast, whitespaceLexer, AST } = require("./global_def");
 let { declarate, registerDecorator, } = require("./config");
 let { ["log"]: c } = console;
 var typeOfElement;
@@ -58,7 +58,7 @@ let Compiler = async () => {
                 final_data_to_ast.push({ el: lexer.element, col: lexer.col, pos: position });
             }
         });
-        c(final_data_to_ast);
+        AST(final_data_to_ast);
         // c(tokens);
     };
     g();

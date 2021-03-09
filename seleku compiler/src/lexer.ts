@@ -4,7 +4,8 @@ let {
 	CREATE_UUID,
 	lexer,
 	data_to_ast,
-	whitespaceLexer
+	whitespaceLexer,
+	AST
 } = require("./global_def");
 let {
 	declarate,
@@ -117,7 +118,11 @@ let Compiler = async (): Promise<void> =>{
 			}
 
 		});
-		c(final_data_to_ast)
+		
+
+		AST(final_data_to_ast);
+
+
 		// c(tokens);
 	}
 

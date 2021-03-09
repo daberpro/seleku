@@ -178,3 +178,20 @@ exports.whitespaceLexer = (args: string): string[] =>{
 
 	return compire;
 }
+
+
+interface final_data{
+	el: string[],
+	col: number | string,
+	pos: number
+}
+
+exports.AST = (args: Array<final_data>)=>{
+
+  for(let i = 0; i < args.length; i++){
+
+    console.log(args[i].pos);
+
+  }
+
+}

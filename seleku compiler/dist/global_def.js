@@ -143,3 +143,8 @@ exports.whitespaceLexer = (args) => {
     });
     return compire;
 };
+exports.AST = (args) => {
+    for (let i = 0; i < args.length; i++) {
+        console.log(args[i].pos);
+    }
+};
