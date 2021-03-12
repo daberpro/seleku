@@ -54,7 +54,8 @@ interface html_string{
 interface final_data{
 	el: string[],
 	col: number | string,
-	pos: number
+	pos: number | string,
+	token: string
 }
 
 let Compiler = async (): Promise<void> =>{
@@ -66,7 +67,7 @@ let Compiler = async (): Promise<void> =>{
 
 	// ==========================================================
 	// variabel di bawah ini merupakan variabel yang akan menerima 
-	// hasilregister oleh decorator
+	// hasil register oleh decorator
 	// ==========================================================
 
 		let Html : string[] = [];
@@ -109,17 +110,24 @@ let Compiler = async (): Promise<void> =>{
 		let a: Array<token_a> = await (():Promise<Array<token_a>>=> data_to_ast(lexer_result))();
 
 		a.forEach((lexer,index) =>{
-			if(lexer.type === typeOfElement[0] && lexer.is === is_tag[0] || lexer.type === typeOfElement[1]){
+			if(lexer.type === typeOfElement[0] && lexer.is === is_tag[0]){
 				position++
-				final_data_to_ast.push({el: lexer.element,col: lexer.col, pos: position});
+				final_data_to_ast.push({el: lexer.element,col: lexer.col, pos: position,token: lexer.token});
 
-			}else if(lexer.type === typeOfElement[0] && lexer.is === is_tag[1]){
-				final_data_to_ast.push({el: lexer.element,col: lexer.col, pos: position});
+			}else if(lexer.type === typeOfElement[1]){
+				// =========== before ==========
+				final_data_to_ast.push({el: lexer.element,col: lexer.col, pos: position,token: lexer.token});
+				// =========== after ============
+				position++
+				final_data_to_ast.push({el: lexer.element,col: lexer.col, pos: position,token: lexer.token});
+			}
+			else if(lexer.type === typeOfElement[0] && lexer.is === is_tag[1]){
+				final_data_to_ast.push({el: lexer.element,col: lexer.col, pos: position,token: lexer.token});
 			}
 
 		});
-		
 
+		final_data_to_ast[-1] = {el: [],col: -1,pos: -1,token:""}
 		AST(final_data_to_ast);
 
 
@@ -130,3 +138,5 @@ let Compiler = async (): Promise<void> =>{
 }
 
 Compiler();
+
+

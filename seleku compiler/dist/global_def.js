@@ -1,42 +1,6 @@
 "use strict";
 let fs = require("fs");
-let token_analyze = [
-    {
-        token: "div",
-        type: "multiElement",
-        col: 0,
-        is: null,
-        element: []
-    },
-    {
-        token: "h1",
-        type: "multiElement",
-        col: 0,
-        is: null,
-        element: []
-    },
-    {
-        token: "p",
-        type: "multiElement",
-        col: 0,
-        is: null,
-        element: []
-    },
-    {
-        token: "b-s",
-        type: "multiElement",
-        col: 0,
-        is: null,
-        element: []
-    },
-    {
-        token: "input",
-        type: "singleElement",
-        col: 0,
-        is: null,
-        element: []
-    },
-];
+let { tokens_all } = require("./tokens_all");
 //custom fungsi uuid 
 exports.CREATE_UUID = () => {
     let dt = new Date().getTime();
@@ -91,12 +55,12 @@ exports.data_to_ast = (data_from_lexers) => {
             let g = [];
             data_from_lexer.forEach((i, col) => {
                 i.forEach((e, index) => {
-                    token_analyze.forEach(j => {
+                    tokens_all.forEach((j) => {
                         if (e.match(new RegExp(`\<${j.token}`)) || e.match(new RegExp(`\<*\/${j.token}`))) {
                             (new RegExp(`\<*\/${j.token}\>`).test(e)) ?
                                 (() => {
                                     g.push({
-                                        token: j.token + "/",
+                                        token: j.token,
                                         type: j.type,
                                         col: col,
                                         is: "closeTag",
@@ -144,7 +108,31 @@ exports.whitespaceLexer = (args) => {
     return compire;
 };
 exports.AST = (args) => {
-    for (let i = 0; i < args.length; i++) {
-        console.log(args[i].pos);
+    let openTag = [];
+    let closeTag = [];
+    for (let x = -1; x < args.length; x++) {
+        if (args[x - 1]?.pos < args[x]?.pos && (args[x]?.pos < args[x + 1]?.pos || args[x]?.pos === args[x + 1]?.pos) && args[x].token.length > 0) {
+            openTag.push({
+                token: args[x].token,
+                col: args[x].col
+            });
+        }
+        else if (args[x].token.length > 0) {
+            closeTag.push({
+                [args[x].token]: args[x].token,
+                col: args[x].col
+            });
+        }
     }
+    for (let a = 0; a < openTag.length; a++) {
+        for (let b = 0; b < closeTag.length; b++) {
+            if (closeTag[b][openTag[a].token]) {
+                console.log(closeTag[b].col + 1, openTag[a].col + 1);
+                closeTag[b][openTag[a].token] = "";
+                openTag[a].token = "";
+                break;
+            }
+        }
+    }
+    console.log(openTag, closeTag);
 };

@@ -1,116 +1,479 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html>
-<head>
-	<title>form pendaftaran</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<style>
-		@media only screen and (min-width: 320px) and (max-width: 1244px) {
-		  /*masukin si id sidebar ke sini*/
-		  contoh
-		  #sidebar{
-
-		  }
-		}
-		*{
-			font-family: sans-serif;
-			font-weight: 500;
-		}
-		.form .title{
-			font-weight: bold;
-			letter-spacing: 1.5px;
-			font-family: monospace;
-			font-size: 45px;
-			color: rgba(100,100,200,1.0);
-		}
-
-		.form input{
-			width: 80%;
-			padding: 20px;
-			border-radius: 10px;
-			border: none;
-			color: gray;
-			box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-			background: white;
-			font-size: 17px;
-			outline: none;
-			margin: 10px auto;
-			margin-top: 25px;
-			font-family: monospace;
-		}
-
-		.form p{
-			font-size: 17px;
-			color: gray;
-			margin: 5px auto;
-			margin-top: 20px;
-			margin-bottom: 10px;
-			box-sizing: border-box;
-		}
-
-		.form button{
-			box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
-			background: rgb(100,100,200);
-			cursor: pointer;
-			font-size: 15px;
-			color: white;
-			font-weight: bold;
-			outline: none;
-			text-transform: uppercase;
-			border:none;
-			border-radius: 10px;
-			padding: 15px;
-			margin-top: 30px;
-		}
-
-		.form{
-			width: 320px;
-			height: 500px;
-			box-sizing: border-box;
-			padding: 30px 5px;
-			border-radius: 10px;
-			background: white;
-			/*box-shadow: 0px 0px 10px rgba(0,0,0,0.1);*/
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			flex-direction: column;
-			position: fixed;
-			top:0px;
-			bottom:0px;
-			left:0px;
-			right:0px;
-			margin:auto;
-		}
-		.form .text{
-			color: black;
-			font-family: monospace;
-			font-size: 20px;
-			font-weight: bold;
-		}
-
-		.form a{
-			color: gray;
-			cursor: pointer;
-			font-size: 15px;
-			font-weight: 500;
-		}
-
-		body{
-			background: rgba(240,240,250);
-		}
-	</style>
-</head>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+    <head>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' name='viewport'/>
+        <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' integrity='sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==' rel='stylesheet'/>
+      <title>Page Title</title>
+      <b:skin><![CDATA[
+          Template Rian
+      ]]></b:skin>
+    <script type='text/javascript'>
+  var uri = window.location.toString();
+  if (uri.indexOf(&quot;%3D&quot;,&quot;%3D&quot;) &gt; 0) {
+    var clean_uri = uri.substring(0, uri.indexOf(&quot;%3D&quot;));
+      window.history.replaceState({}, document.title, clean_uri);
+  }
+  var uri = window.location.toString();
+  if (uri.indexOf(&quot;%3D%3D&quot;,&quot;%3D%3D&quot;) &gt; 0) {
+    var clean_uri = uri.substring(0, uri.indexOf(&quot;%3D%3D&quot;));
+      window.history.replaceState({}, document.title, clean_uri);
+  }
+  var uri = window.location.toString();
+  if (uri.indexOf(&quot;&amp;m=1&quot;,&quot;&amp;m=1&quot;) &gt; 0) {
+    var clean_uri = uri.substring(0, uri.indexOf(&quot;&amp;m=1&quot;));
+      window.history.replaceState({}, document.title, clean_uri);
+  }
+  var uri = window.location.toString();
+  if (uri.indexOf(&quot;?m=1&quot;,&quot;?m=1&quot;) &gt; 0) {
+    var clean_uri = uri.substring(0, uri.indexOf(&quot;?m=1&quot;));
+      window.history.replaceState({}, document.title, clean_uri);
+  }
+  </script>
+      <style>
+        h1,h2,h3,ul{
+                margin: 0px;
+                padding: 0px;
+        }
+        * {
+            
+              font-family: sans-serif;
+              font-weight: 500;
+  
+          }
+  
+          html,
+          body {
+              margin: 0px;
+              padding: 0px;
+              background: rgba(200, 200, 250, 0.2);
+          }
+  
+          .header {
+              position: relative;
+              width: 100%;
+              height: 250px;
+              background: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+                margin-top: 20px;
+              padding: 30px;
+              box-sizing: border-box;
+          }
+  
+          .header:before {
+              content: &quot;&quot;;
+              width: 150px;
+              height: 200px;
+              background: #6f7fc7;
+              position: absolute;
+              left: 60px;
+              top: 0px;
+              border-radius: 0px 0px 20px 20px;
+              z-index: 2;
+          }
+  
+          .header:after {
+              content: &quot;&quot;;
+              width: 150px;
+              height: 150px;
+              background: #6f7fc7;
+              position: absolute;
+              right: 60px;
+              bottom: 0px;
+              border-radius: 20px 20px 0px 0px;
+              z-index: 2;
+          }
+  
+          .header .widget #header-inner .titlewrapper .title {
+              z-index: 3;
+              position: relative;
+              font-size: clamp(25px, 8vw, 70px);
+                font-weight: bold;
+          }
+  
+          .header .widget #header-inner .descriptionwrapper .description span {
+              z-index: 3;
+              box-sizing: border-box;
+              position: relative;
+          }
+  
+          @media only screen and (min-width: 320px) and (max-width: 600px) {
+              .header .widget #header-inner .descriptionwrapper .description span {
+                  font-size: 17px;
+              }
+                #skiplinks .nav-left a{
+                    display: none;
+                }
+          }
+  
+  
+          @media only screen and (min-width: 320px) and (max-width: 1050px) {
+              .header:before {
+                  height: 30px;
+                    left: 20px;
+              }
+  
+              .header:after {
+                  height: 40px;
+                    right: 20px;
+              }
+          }
+        
+            #PopularPosts1{
+                width: 40%;
+                display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              flex-direction: column;
+            }
+        
+            a{
+              color: #6f7fc7;
+                text-decoration: none;
+          }
+        
+            #skiplinks{
+                width: 100%;
+                height: 60px;
+                display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+            }
+        
+            #skiplinks .nav-left{
+                width: 50%;
+                height: 100%;
+                display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+            }
+        
+            #skiplinks .nav-left button{
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                border: 0.3px solid gray;
+                border-radius: 5px;
+                background: transparent;
+                display: none;
+                outline: none;
+            }
+        
+            #skiplinks .nav-right{
+                width: 50%;
+                height: 100%;
+                display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+            }
+        
+          #skiplinks .nav-right input{
+              outline: none;
+                border: none;
+                background: white;
+                border-radius: 10px;
+                padding: 10px;
+                width: 280px;
+                height: 80%;
+          }
+        
+            #skiplinks .nav-left a{
+                padding: 10px 10px;
+                font-weight: bold;
+            }
+        
+            .main{
+              width: 100%;
+                display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              flex-wrap: wrap;
+          }
+        
+            .main .blog-posts.hfeed{
+              width: 80%;
+                display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+          }
+        
+            #Blog1{
+                width: 60%;
+                display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+                box-sizing: border-box;
+            }
+        
+            #Blog1 img{
+                width: 100%;
+            }
+        
+            .date-outer{
+                width: 100%;
+              padding: 20px;
+                border-radius: 10px;
+                background: white;
+                margin: 10px 0px;
+                
+          }
+            .date-outer span{
+              font-size: 13px;
+          }
+            .blog-pager,.feed-links,.blog-feeds{
+              display: none;
+          }
+        
+            .post-body .entry-content{
+                font-size: 25px;
+                font-weight: bold;
+            }
+        
+        
+        
+            .post-title .entry-title{
+                font-size: 20px;
+            }
+        
+            .post-share-buttons .goog-inline-block .share-button{
+                border: none;
+                background: red;
+            }
+        
+            .post-outer{
+                border-bottom: 1px solid gray;
+                margin: 20px 0px;
+                padding: 20px;
+            }
+            
+            h3.post-title .entry-title{
+                padding: 5px;
+            }
+        
+            #BlogArchive1{
+                width: 50%;
+                padding: 20px 0px;
+                background: white;
+                display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+        height: 250px;
+  
+        }
+        
+        #Profile1{
+            height: 250px;
+                width: 50%;
+                text-align: center;
+                padding: 20px 0px;
+                background: white;
+        display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+        height: 250px;
+                
+        }
+        
+        @media only screen and (min-width: 320px) and (max-width: 600px) {
+                #PopularPosts1{
+                    width: 100%;
+                    justify-content: flex-start;
+                }
+        
+            #skiplinks .nav-left button{
+                display: block;
+            }
+        
+                #Blog1{
+                    width: 100%;
+                }
+        
+                #skiplinks .nav-right input{
+                    width: 100%;
+                }
+        
+        #skiplinks .nav-left{
+                justify-content: flex-start;
+                padding-left: 20px;
+                box-sizing: border-box;
+        }
+        
+                #Profile1{
+                    width: 100%;
+                    height: 250px;
+                    text-align: center;
+                    display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: column;
+        border-radius: 10px;
+                }
+        
+                #Profile1 .widget-content{
+                    display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: column;
+                }
+        
+              #Profile1 .widget-content img{
+                    border-radius: 10px;
+                      margin: 20px 0px;
+                    transform: scale(1.2);
+              }
+        
+                #BlogArchive1{
+                    width: 100%;
+        border-radius: 10px;
+                }
+        
+        }
+        
+  
+        
+        #Profile1 .widget-content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+  
+        #Profile1 .widget-content img{
+            border-radius: 10px;
+            margin: 20px 0px;
+            transform: scale(1.2);
+        }
+        
+        #PopularPosts1 ul{
+                width: 100%;
+                display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+        }
+        
+        #PopularPosts1 h2{
+                font-weight: bold;
+                font-size: 30px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        color: #6f7fc7;
+        }
+        
+        #PopularPosts1 li{
+                width: 80%;
+                text-decoration: none;
+                list-style: none;
+              padding: 20px;
+              background: white;
+              box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+                border-radius: 10px;
+                margin: 10px 0px;
+        }
+        
+        #PopularPosts1 .item-snippet{
+                color: gray;
+        }
+        
+        #PopularPosts1 .item-title a{
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+        }
+        
+        #Blog1 .post-title .entry-title{
+                padding: 20px 0px;
+                background: #6f7fc7;
+                border-radius: 10px;
+        }
+        .sidebar{
+                width: 100%;
+                display: flex;
+              justify-content: space-around;
+              align-items: center;
+              flex-wrap: wrap;
+                margin: 40px 0px;
+        }
+        .footer{
+                width: 100%;
+                display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+                height: 60px;
+        }
+        .post-body .entry-content{
+                text-overflow: clip;
+        }
+      </style>
+  </head>
 <body>
 
-	<div class="form">
-		<b class="title">Skul Online</b>
-		<p>login to try out</p>
-		<input type="email" placeholder="Email">
-		<input type="password" placeholder="Password">
-		<button>Login</button>
-		<p class="text">-- Or --</p>
-		<a title="buat akun">register or create account</a>
-	</div>
+    <div id='outer-wrapper'>
+      <div id='wrap2'>
+        <div id='skiplinks'>
+          <div class="nav-left">
+            <a href='#main'>Main</a> 
+            <a href='#sidebar'>Sidebar</a>
+            <a href="https://daberpro.github.io/">Protofolio</a>
+            <button>
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <div class="nav-right">
+              <input type="search" placeholder="Cari Artikel"/>
+          </div>
+        </div>
+      </div>
+  </div>
+    <div id='outer-wrapper'>
+        <div id='wrap2'>
 
+            <div id='header-wrapper'>
+                
+                <b:section class='header' id='header' maxwidgets='1' showaddelement='yes'>
+                    <b:widget id='Header1' locked='true' title='Testpage Two (Header)' type='Header' />
+                </b:section>
+            </div>
+
+            <div id='content-wrapper'>
+                <div id='main-wrapper'>
+                    <b:section class='main' id='main' showaddelement='no'>
+                        <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' />
+                          <b:widget id='PopularPosts1' locked='false' title='Populer Post' type='PopularPosts' version='2' visible='true' />
+                    </b:section>
+                </div>
+
+                <div id='sidebar-wrapper'>
+                    <b:section class='sidebar' id='sidebar' preferred='yes'>
+                        <b:widget id='Profile1' locked='false' title='About Me' type='Profile' />
+                        <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive' />
+                        <b:widget id='Label1' locked='false' title='Labels' type='Label' />
+                    </b:section>
+                </div>
+                <div class='clear'>&#160;</div>
+
+            </div> 
+            <!-- end content-wrapper -->
+
+            <div id='footer-wrapper'>
+                <b:section class='footer' id='footer'>
+                    <b:widget id='Text1' locked='false' title='© 2021 Arianto' type='Text' />
+                </b:section>
+            </div>
+
+        </div>
+    </div>
 </body>
+
 </html>

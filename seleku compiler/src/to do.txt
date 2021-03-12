@@ -1,0 +1,24 @@
+to do
+
+===============================================
+memuat lexer dan parser seleku:
+    membuat lexer -> clear
+    membuat whitespace -> clear
+    membuat token_analyze -> clear
+    membuat ast -> still working
+
+membuat processing directive seleku:
+    parse sistem -> not yet
+    include sistem -> not yet
+    custom web components -> not yet
+
+
+
+materi grup private:
+    sejarah html -> clear
+    pengenalan tag dasar -> clear
+    pengenalan h1,div,input,button
+    textaera,p,b,i,em,ul,li,form -> not all
+    pengenalan tag di head -> not yet
+    pengenalan meta tag -> not yet
+    pengenalan style,link,title -> not yet

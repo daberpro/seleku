@@ -1,20 +1,30 @@
 #html
 <div class="p-t-20px">
-
 	<p id="title" class="f-s-20px f-w-500">
 		seleku core
+		<b>
+			{name}
+			<p>
+				100
+			</p>
+		</b>
 	</p>
-
 	<input type="text" value="hello world"/>
 	<input type="number" value={5} />
 	<h1> 
 		hello 
 	</h1>
+	<div>
+		{hello}
+	</div>
 </div>
 <div>
 	<h1>
 		hello world
 	</h1>
+	<b>
+	k
+	</b>
 </div>
 
 #html
